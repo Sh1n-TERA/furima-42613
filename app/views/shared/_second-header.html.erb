@@ -1,7 +1,8 @@
 <header class='second-header'>
-  <%= link_to image_tag("furima-logo-color.png", class:"second-logo"), root_path %>
-  <nav>
+  <%= link_to image_tag("furima-logo-color.png", class:"second-logo"), "/" %>
+
+  <% unless user_signed_in? || controller_name == 'sessions' || controller_name == 'registrations' %>
     <%= link_to 'ログイン', new_user_session_path %>
     <%= link_to '新規登録', new_user_registration_path %>
-  </nav>
+  <% end %>
 </header>
