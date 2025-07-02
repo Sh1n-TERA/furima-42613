@@ -13,7 +13,7 @@ class User < ApplicationRecord
       validates :first_name
     end
 
-    with_options format: { with: /\A[ァ-ヶ一ー]+\z/, message: '全カタカナを使用してください' } do
+    with_options format: { with: /\A[ァ-ヶー]+\z/, message: '全カタカナを使用してください' } do
       validates :last_name_kana
       validates :first_name_kana
     end
