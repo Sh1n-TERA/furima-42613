@@ -39,7 +39,15 @@ class ItemsController < ApplicationController
   end
 
   def update
-    if @item.update(item_params)
+    @item = Item.find(params[:id])
+    # 画像が未選択の場合、画像以外で更新
+    if item_params[:image].nil?
+      if @item.update(item_params.except(:image))
+        redirect_to item_path(@item)
+      else
+        render :edit, status: :unprocessable_entity
+      end
+    elsif @item.update(item_params)
       redirect_to item_path(@item)
     else
       render :edit, status: :unprocessable_entity
