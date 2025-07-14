@@ -6,7 +6,8 @@ const pay = () => {
 
   // 初期化済みなら再利用
   if (!payjpInstance) {
-    payjpInstance = Payjp("pk_test_7fb398a9bb75c79e8c6bab89");
+    const payjpPublicKey = document.querySelector('meta[name="payjp-public-key"]').content;
+    payjpInstance = Payjp(payjpPublicKey);
   }
 
   const elements = payjpInstance.elements();
