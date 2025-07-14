@@ -36,3 +36,6 @@
 .Ds_Store
 
 .env
+
+# RSpecの実行結果ログをGit管理から除外
+/spec/examples.txt
