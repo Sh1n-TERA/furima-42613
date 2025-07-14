@@ -13,8 +13,14 @@ class OrderAddress
     validates :item_id
   end
 
-  validates :phone_number, format: { with: /\A\d+\z/, message: 'is invalid. Input only number' },
-                           length: { minimum: 10, maximum: 11, message: 'is too short' }
+  validates :phone_number,
+            format: { with: /\A\d+\z/, message: 'is invalid. Input only number' },
+            length: {
+              minimum: 10,
+              maximum: 11,
+              too_short: 'is too short (minimum is 10 characters)',
+              too_long: 'is too long (maximum is 11 characters)'
+            }
 
   def save
     # Orderテーブルに購入情報を保存

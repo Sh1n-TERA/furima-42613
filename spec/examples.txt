@@ -1,0 +1,14 @@
+example_id                                    | status | run_time        |
+--------------------------------------------- | ------ | --------------- |
+./spec/models/order_address_spec.rb[1:1:1:1]  | passed | 0.35814 seconds |
+./spec/models/order_address_spec.rb[1:1:1:2]  | passed | 0.211 seconds   |
+./spec/models/order_address_spec.rb[1:1:2:1]  | passed | 0.15011 seconds |
+./spec/models/order_address_spec.rb[1:1:2:2]  | passed | 0.14899 seconds |
+./spec/models/order_address_spec.rb[1:1:2:3]  | passed | 0.14691 seconds |
+./spec/models/order_address_spec.rb[1:1:2:4]  | passed | 0.14514 seconds |
+./spec/models/order_address_spec.rb[1:1:2:5]  | passed | 0.14763 seconds |
+./spec/models/order_address_spec.rb[1:1:2:6]  | passed | 0.14731 seconds |
+./spec/models/order_address_spec.rb[1:1:2:7]  | passed | 0.14779 seconds |
+./spec/models/order_address_spec.rb[1:1:2:8]  | passed | 0.14868 seconds |
+./spec/models/order_address_spec.rb[1:1:2:9]  | passed | 0.14391 seconds |
+./spec/models/order_address_spec.rb[1:1:2:10] | passed | 0.15793 seconds |
