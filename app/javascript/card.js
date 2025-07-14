@@ -22,16 +22,20 @@ const pay = () => {
     e.preventDefault();
     payjp.createToken(numberElement).then((response) => {
       if (response.error) {
-        alert(response.error.message);
-      } else {
-        const token = response.id;
-        const tokenInput = `<input value="${token}" name="token" type="hidden">`;
-        form.insertAdjacentHTML("beforeend", tokenInput);
-        numberElement.clear();
-        expiryElement.clear();
-        cvcElement.clear();
+        // トークン生成エラー時にもRailsにformを送ってバリデーションエラーを表示させる
+        const dummyToken = `<input value="" name="token" type="hidden">`;
+        form.insertAdjacentHTML("beforeend", dummyToken);
         form.submit();
+        return;
       }
+
+      const token = response.id;
+      const tokenInput = `<input value="${token}" name="token" type="hidden">`;
+      form.insertAdjacentHTML("beforeend", tokenInput);
+      numberElement.clear();
+      expiryElement.clear();
+      cvcElement.clear();
+      form.submit();
     });
   });
 };
