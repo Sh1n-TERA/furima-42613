@@ -1,28 +1,32 @@
-let payjpLoaded = false;
+let payjpInstance = null;
 
 const pay = () => {
-  if (payjpLoaded) return; // ← すでに実行済なら何もしない
-  payjpLoaded = true;
+  const form = document.getElementById("charge-form");
+  if (!form) return;
 
-  // PAY.JPの公開鍵を設定（直接書く or 環境変数経由）
-  const payjp = Payjp("pk_test_7fb398a9bb75c79e8c6bab89"); // テスト用公開鍵に書き換える
-  const elements = payjp.elements();
+  // 初期化済みなら再利用
+  if (!payjpInstance) {
+    payjpInstance = Payjp("pk_test_7fb398a9bb75c79e8c6bab89");
+  }
+
+  const elements = payjpInstance.elements();
+
   const numberElement = elements.create('cardNumber');
   const expiryElement = elements.create('cardExpiry');
   const cvcElement = elements.create('cardCvc');
 
-  // 要素をDOMに差し込む
+  if (!document.getElementById('card-number')) return;
+  if (!document.getElementById('card-exp-month')) return;
+  if (!document.getElementById('card-cvc')) return;
+
   numberElement.mount('#card-number');
   expiryElement.mount('#card-exp-month');
   cvcElement.mount('#card-cvc');
 
-  // フォーム送信時の処理
-  const form = document.getElementById("charge-form");
   form.addEventListener("submit", (e) => {
     e.preventDefault();
-    payjp.createToken(numberElement).then((response) => {
+    payjpInstance.createToken(numberElement).then((response) => {
       if (response.error) {
-        // トークン生成エラー時にもRailsにformを送ってバリデーションエラーを表示させる
         const dummyToken = `<input value="" name="token" type="hidden">`;
         form.insertAdjacentHTML("beforeend", dummyToken);
         form.submit();
@@ -40,5 +44,4 @@ const pay = () => {
   });
 };
 
-document.addEventListener("DOMContentLoaded", pay);
-document.addEventListener("turbo:load", pay); // ←両方対応
+document.addEventListener("turbo:load", pay);
