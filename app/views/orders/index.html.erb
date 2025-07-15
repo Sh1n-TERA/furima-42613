@@ -33,15 +33,8 @@
 
     <%= form_with model: @order_address, url: item_orders_path(@item), id: 'charge-form', class: 'transaction-form-wrap', local: true, data: { turbo: false } do |f| %>
       <div id="card-errors"></div>
-      <% if @order_address.errors.any? %>
-        <div id="error_explanation">
-          <ul>
-            <% @order_address.errors.full_messages.each do |message| %>
-          <li class="error-message"><%= message %></li>
-            <% end %>
-          </ul>
-        </div>
-      <% end %>
+        <%= render "shared/error_messages", object: @order_address %>
+
 
     <%# カード情報の入力 %>
     <div class='credit-card-form'>
