@@ -1,6 +1,8 @@
 let payjpInstance = null;
 
 const pay = () => {
+  console.log("✅ card.js loaded");
+
   const form = document.getElementById("charge-form");
   if (!form) return;
 
