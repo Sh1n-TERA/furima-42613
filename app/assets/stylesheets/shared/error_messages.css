@@ -9,3 +9,9 @@
   list-style: circle;
   color: rgb(182, 48, 0);
 }
+
+#error_explanation {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5vh;
+}
