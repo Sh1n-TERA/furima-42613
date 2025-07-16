@@ -26,4 +26,12 @@ function setupPriceListener() {
       profitDom.innerHTML = "";
     }
   });
+  
+  if (priceInput.value.match(/^\d+$/)) {
+    const inputValue = priceInput.value;
+    const tax = Math.floor(inputValue * 0.1);
+    const profit = Math.floor(inputValue - tax);
+    addTaxDom.innerHTML = tax;
+    profitDom.innerHTML = profit;
+  }
 }
