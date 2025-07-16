@@ -73,8 +73,9 @@
 
 .lists-right {
   display: flex;
+  justify-content: flex-end;
   list-style: none;
-  align-items: flex-end;
+  align-items: center;
 }
 
 
