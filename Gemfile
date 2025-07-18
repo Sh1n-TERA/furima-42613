@@ -51,7 +51,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 4.0.0'
   gem 'factory_bot_rails'
   gem 'faker'
-  gem 'pg', '~> 1.3.0'
+  gem 'pg', '~> 1.2.3'
 end
 
 group :development do
