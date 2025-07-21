@@ -17,7 +17,6 @@ gem "mini_magick"
 gem "image_processing", "~> 1.2"
 gem "active_hash"
 gem "dotenv-rails"
-gem "unicorn", "6.1.0"
 
 group :development, :test do
   gem "debug", platforms: %i[ mri mswin mingw x64_mingw ]
@@ -38,15 +37,3 @@ end
 
 group :production do
 end
-<<<<<<< HEAD
-=======
-
-gem 'devise'
-
-gem 'mini_magick'
-gem 'image_processing', '~> 1.2'
-
-gem 'active_hash'
-
-gem 'dotenv-rails'
->>>>>>> parent of c64d7f2 (Unicorn導入)
