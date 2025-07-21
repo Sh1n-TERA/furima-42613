@@ -38,3 +38,15 @@ end
 
 group :production do
 end
+<<<<<<< HEAD
+=======
+
+gem 'devise'
+
+gem 'mini_magick'
+gem 'image_processing', '~> 1.2'
+
+gem 'active_hash'
+
+gem 'dotenv-rails'
+>>>>>>> parent of c64d7f2 (Unicorn導入)
