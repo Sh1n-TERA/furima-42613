@@ -1,22 +1,25 @@
 default: &default
-  adapter: mysql2
-  encoding: utf8mb4
+  adapter: postgresql
+  encoding: unicode
   pool: 5
-  username: sh1n_tera
-  password: sh1ng0522
-  host: localhost
-  socket: /var/lib/mysql/mysql.sock
 
 development:
   <<: *default
-  database: furima_db
+  database: furima_dev
+  username: postgres
+  password: 
+  host: localhost
 
 test:
   <<: *default
   database: furima_test
+  username: postgres
+  password: 
+  host: localhost
 
 production:
   <<: *default
-  database: furima_db
-  username: sh1n_tera
-  password: sh1ng0522
+  database: <%= ENV['RENDER_DATABASE_NAME'] %>
+  username: <%= ENV['RENDER_DATABASE_USER'] %>
+  password: <%= ENV['RENDER_DATABASE_PASSWORD'] %>
+  host: <%= ENV['RENDER_DATABASE_HOST'] %>

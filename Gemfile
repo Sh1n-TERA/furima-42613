@@ -4,7 +4,6 @@ ruby "3.2.0"
 
 gem "rails", "~> 7.1.0"
 gem "sprockets-rails"
-# gem "mysql2", "~> 0.5"
 gem "puma", ">= 5.0"
 gem "importmap-rails"
 gem "turbo-rails"
