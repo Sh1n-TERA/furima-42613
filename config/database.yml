@@ -24,4 +24,4 @@ production:
   database: furima-42613_production
   username: root
   password: 0522
-  socket: /var/lib/mysql/mysql.sock
+  host: localhost
