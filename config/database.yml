@@ -20,6 +20,7 @@ test:
 production:
   <<: *default
   adapter: mysql2
+  encoding: unicode
   database: furima-42613_production
   username: root
   password: <%= ENV['DATABASE_PASSWORD'] %>
