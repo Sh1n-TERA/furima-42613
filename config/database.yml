@@ -18,9 +18,9 @@ test:
   host: localhost
 
 production:
-  <<: *default
   adapter: mysql2
-  encoding: unicode
+  encoding: utf8
+  pool: 5
   database: furima-42613_production
   username: root
   password: <%= ENV['DATABASE_PASSWORD'] %>
