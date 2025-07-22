@@ -28,3 +28,4 @@ default: &default
 production:
   <<: *default
   database: furima-42613_production
+  host: 127.0.0.1
