@@ -16,7 +16,6 @@ gem "mini_magick"
 gem "image_processing", "~> 1.2"
 gem "active_hash"
 gem "dotenv-rails"
-gem "pg", "~> 1.5"
 gem 'mysql2', '~> 0.5'
 
 group :development, :test do
